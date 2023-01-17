@@ -1,7 +1,23 @@
 {
   "name": "frontendmentor-job-listing-with-filtering",
+  "description": "job listing with filtering [intermediate]",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/aratur/frontendmentor-job-listing-with-filtering.git"
+  },
+  "keywords": [
+    "frontendmentor",
+    "js",
+    "css",
+    "html",
+    "react"
+  ],
+  "author": "Artur Jedrzejczak",
+  "bugs": {
+    "url": "https://github.com/aratur/frontendmentor-job-listing-with-filtering/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -12,7 +28,7 @@
     "@types/react-dom": "^18.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
   },
@@ -39,5 +55,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-jest-dom": "^4.0.3",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.9.1",
+    "sass": "^1.57.1"
   }
 }
