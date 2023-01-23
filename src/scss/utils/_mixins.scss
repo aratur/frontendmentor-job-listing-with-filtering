@@ -1,0 +1,18 @@
+@use '../base/constants' as *;
+
+$click-animation-duration: 100ms;
+
+@mixin click-animation {
+  transform: scale(0.9);
+  transition-duration: $click-animation-duration;
+}
+
+@mixin hover-animate {
+  transition: color 300ms ease 0ms, background-color 300ms ease 0ms;
+}
+
+@mixin media-desktop {
+  @media (min-width: $breakpoint-default) {
+    @content;
+  }
+}

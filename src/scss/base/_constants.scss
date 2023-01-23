@@ -1,0 +1,10 @@
+// The designs were created to the following widths:
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+$main-max-width: 1440px;
+$main-width: min(calc(100vw - 2 * max(1.6rem, 6vw)), $main-max-width);
+
+$breakpoint-default: 43rem;
+$gap-size-default: 1rem;

@@ -1,0 +1,20 @@
+@use '../base/colors';
+
+body {
+  overflow-x: hidden;
+}
+header {
+  background-color: var(--clr-primary);
+  background-image: url('../../images/bg-header-mobile.svg');
+  background-size: cover;
+  background-repeat: repeat;
+  width: 100vw;
+  height: 13.25rem;
+  z-index: -100;
+}
+
+@media (min-width: 800px) {
+  header {
+    background-image: url('../../images/bg-header-desktop.svg');
+  }
+}

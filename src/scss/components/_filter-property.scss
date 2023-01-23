@@ -1,0 +1,37 @@
+@use '../base/typography' as t;
+@use '../utils/mixins' as a;
+@use '../utils/utility-classes' as u;
+
+.filter-property-container {
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-property-background);
+}
+
+.filter-property-button-remove {
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border: none;
+  background: none;
+  background-color: var(--clr-primary);
+  background-image: url('../../images/icon-remove.svg');
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  background-position: 0.5rem;
+  border-top-right-radius: u.$border-radius-small;
+  border-bottom-right-radius: u.$border-radius-small;
+  @include a.hover-animate;
+}
+
+.filter-property-button-remove:is(:hover, :focus, :active) {
+  background-color: var(--clr-very-dark-greyish-cyan);
+  cursor: pointer;
+}
+
+.filter-property-button-remove:active {
+  @include a.click-animation;
+}
+
+.filter-property-label {
+  @include t.fnt-primary;
+}

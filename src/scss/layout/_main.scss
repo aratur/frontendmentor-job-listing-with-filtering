@@ -1,0 +1,7 @@
+@use '../base/constants' as c;
+
+main {
+  margin-inline: max(1.6rem, 6vw);
+  width: c.$main-width;
+  margin: 0 auto;
+}

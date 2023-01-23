@@ -1,0 +1,21 @@
+// variables with color definitions for the website
+
+:root {
+  // primary color
+  --clr-primary: hsl(180, 29%, 50%);
+  --test: hsl(180, 10%, 74%);
+  --oval: hsl(180, 10%, 74%);
+  --full: hsl(180, 8%, 52%);
+  // Neutral
+  --clr-background: hsl(180, 52%, 96%);
+  --clr-filter-tables: hsl(180, 31%, 95%);
+  --clr-light-grayish-cyan: hsl(180, 10%, 74%);
+  --clr-dark-grayish-cyan: hsl(180, 8%, 52%);
+  --clr-very-dark-greyish-cyan: hsl(180, 14%, 20%);
+
+  --clr-card-background: white;
+  --clr-header-background: var(--clr-primary);
+  --clr-property-background: var(--clr-background);
+
+  --card-box-shadow: 0px 15px 20px -5px hsla(189, 82%, 28%, 15%);
+}

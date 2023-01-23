@@ -1,0 +1,73 @@
+@use '../base/typography' as t;
+@use '../utils/mixins' as a;
+@use '../utils/utility-classes' as u;
+@use '../base/constants' as c;
+
+// .filter,
+// .filter * {
+//   background-color: rgba(0, 0, 0, 0.1);
+//   outline: 4px solid black;
+// }
+
+$gap-size: c.$gap-size-default;
+
+.filter {
+  margin-top: -2.25rem;
+  width: c.$main-width;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: $gap-size;
+  padding: 1.25rem;
+  background-color: var(--clr-card-background);
+  box-shadow: var(--card-box-shadow);
+}
+
+// animation for filter start
+.filter {
+  filter: blur(0px);
+  opacity: 1;
+  // $clear-filter-animation-duration
+  // + $animation-delay
+  // should be eqa to delayClearFilter
+  // in the Filter React component
+  $clear-filter-animation-duration: 300ms;
+  $animation-delay: 100ms;
+  $part-duration: calc($clear-filter-animation-duration / 2);
+  transition: filter $part-duration ease-in $animation-delay,
+    opacity $part-duration linear calc($part-duration + $animation-delay);
+  transform-origin: left;
+}
+
+.filter.filter-blur-out {
+  filter: blur(8px);
+  opacity: 0;
+}
+// animation for filter end
+
+.filter-properties-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: $gap-size;
+  column-gap: $gap-size;
+}
+
+.filter-button-clear {
+  @include t.fnt-primary;
+  color: var(--clr-dark-grayish-cyan);
+  align-self: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  @include a.hover-animate;
+}
+
+.filter-button-clear:hover {
+  text-decoration-line: underline;
+  color: var(--clr-primary);
+}
+
+.filter-button-clear:active {
+  @include a.click-animation;
+}

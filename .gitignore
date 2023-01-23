@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+src/scss/main.css
+src/scss/main.css.map
+
+/coverage
