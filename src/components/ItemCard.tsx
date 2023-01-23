@@ -36,7 +36,11 @@ const ItemCard = (props: Props) => {
       className={`item-card ${featuredClass} border-radius-medium`}
     >
       <div className="item-left-side-container">
-        <img src={logo} alt="company logo" className="item-logo" />
+        <img
+          src={logo}
+          alt={`company logo of ${company}`}
+          className="item-logo"
+        />
         <div className="item-description-container">
           <div className="item-header">
             <h3 className="item-company">{company}</h3>
