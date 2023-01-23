@@ -4,7 +4,7 @@
 // - Desktop: 1440px
 
 $main-max-width: 1440px;
-$main-width: min(calc(100vw - 2 * max(1.6rem, 6vw)), $main-max-width);
+$main-width: clamp(327px, 80vw, 1110px);
 
 $breakpoint-default: 43rem;
 $gap-size-default: 1rem;

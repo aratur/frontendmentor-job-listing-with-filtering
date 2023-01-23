@@ -1,6 +1,19 @@
+@use '../utils/mixins' as *;
+
 .items-list {
   display: grid;
   margin-top: clamp(3.5rem, 7vw, 4.75rem);
   margin-bottom: clamp(2.125rem, 9vw, 7.5rem);
   row-gap: 2.5rem;
+  @include media-desktop {
+    row-gap: 1.5rem;
+  }
+}
+
+// space between filter and the list grows only on mobile
+// on desktop stays the same regardless if filter appears or not
+:is(.filter:not(.hidden)) ~ .items-list {
+  @include media-desktop {
+    margin-top: 2.5rem;
+  }
 }

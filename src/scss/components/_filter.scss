@@ -18,7 +18,8 @@ $gap-size: c.$gap-size-default;
   justify-content: space-between;
   align-items: center;
   column-gap: $gap-size;
-  padding: 1.25rem;
+  padding-block: 1.25rem;
+  padding-inline: clamp(1.2rem, 3.5vw, 2.5rem);
   background-color: var(--clr-card-background);
   box-shadow: var(--card-box-shadow);
 }
@@ -60,6 +61,7 @@ $gap-size: c.$gap-size-default;
   border: none;
   background: none;
   cursor: pointer;
+  padding-inline: 0;
   @include a.hover-animate;
 }
 
