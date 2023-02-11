@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import FilterProperty from './FilterProperty';
 
 type Props = {
@@ -46,9 +46,9 @@ const Filter = (props: Props) => {
     }
   };
 
-  const handleClearFilterInternal = () => {
+  const handleClearFilterInternal = useCallback(() => {
     animateBlur(handleClearFilter);
-  };
+  }, [handleClearFilter]);
 
   return (
     <div

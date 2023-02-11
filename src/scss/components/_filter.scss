@@ -38,12 +38,12 @@ $gap-size: c.$gap-size-default;
   transition: filter $part-duration ease-in $animation-delay,
     opacity $part-duration linear calc($part-duration + $animation-delay);
   transform-origin: left;
+  &.filter-blur-out {
+    filter: blur(8px);
+    opacity: 0;
+  }
 }
 
-.filter.filter-blur-out {
-  filter: blur(8px);
-  opacity: 0;
-}
 // animation for filter end
 
 .filter-properties-container {
@@ -63,13 +63,11 @@ $gap-size: c.$gap-size-default;
   cursor: pointer;
   padding-inline: 0;
   @include a.hover-animate;
-}
-
-.filter-button-clear:hover {
-  text-decoration-line: underline;
-  color: var(--clr-primary);
-}
-
-.filter-button-clear:active {
-  @include a.click-animation;
+  &:hover {
+    text-decoration-line: underline;
+    color: var(--clr-primary);
+  }
+  &:active {
+    @include a.click-animation;
+  }
 }

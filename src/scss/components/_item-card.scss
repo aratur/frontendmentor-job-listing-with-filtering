@@ -17,54 +17,45 @@
   padding-block: 2rem;
   background-color: var(--clr-card-background);
   box-shadow: var(--card-box-shadow);
-}
-
-@include media-desktop {
-  .item-card {
+  @include media-desktop {
     grid-auto-flow: column;
     grid-template-columns: max-content 1fr;
     justify-content: space-between;
     row-gap: 0;
     column-gap: c.$gap-size-default;
   }
-}
-
-.item-card.is-featured::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: var(--clr-primary);
-  height: 100%;
-  width: 5px;
-  border-top-left-radius: u.$border-radius-medium;
-  border-bottom-left-radius: u.$border-radius-medium;
+  .is-featured::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--clr-primary);
+    height: 100%;
+    width: 5px;
+    border-top-left-radius: u.$border-radius-medium;
+    border-bottom-left-radius: u.$border-radius-medium;
+  }
 }
 
 .item-left-side-container {
   display: flex;
   align-items: flex-start;
   column-gap: 1.5rem;
-}
-
-.item-logo {
-  position: absolute;
-  top: -1.5rem;
-  left: 1.5rem;
-  width: 3rem;
-  aspect-ratio: 1 / 1;
-}
-
-@include media-desktop {
   .item-logo {
-    position: unset;
-    width: 5.5rem;
+    position: absolute;
+    top: -1.5rem;
+    left: 1.5rem;
+    width: 3rem;
+    aspect-ratio: 1 / 1;
+    @include media-desktop {
+      position: unset;
+      width: 5.5rem;
+    }
   }
-}
-
-.item-description-container {
-  display: flex;
-  flex-direction: column;
+  .item-description-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .item-header {
@@ -73,61 +64,51 @@
   justify-content: flex-start;
   column-gap: c.$gap-size-default;
   min-height: 1.5rem;
-}
+  .item-company {
+    font-size: var(--fnt-size-large-mobile);
+    line-height: normal;
+    font-weight: bold;
+    color: var(--clr-primary);
+    @include media-desktop {
+      font-size: var(--fnt-size-large);
+    }
+  }
+  .item-header-tiles {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+  .item-header-tiles > * {
+    color: var(--clr-card-background);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: var(--fnt-size-small);
+    letter-spacing: 0.11px;
+    height: 1.5rem;
+    line-height: 1;
+    padding: 0.5em;
+  }
+  .item-header-tiles .item-new {
+    background-color: var(--clr-primary);
+  }
 
-h3.item-company {
-  font-size: var(--fnt-size-large-mobile);
-  line-height: normal;
-  font-weight: bold;
-  color: var(--clr-primary);
-}
-
-@include media-desktop {
-  h3.item-company {
-    font-size: var(--fnt-size-large);
+  .item-header-tiles .item-featured {
+    background-color: var(--clr-very-dark-greyish-cyan);
   }
 }
 
-.item-header-tiles {
-  display: flex;
-  column-gap: 0.5rem;
-}
-
-.item-header-tiles > * {
-  color: var(--clr-card-background);
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: var(--fnt-size-small);
-  letter-spacing: 0.11px;
-  height: 1.5rem;
-  line-height: 1;
-  padding: 0.5em;
-}
-
-.item-header-tiles .item-new {
-  background-color: var(--clr-primary);
-}
-
-.item-header-tiles .item-featured {
-  background-color: var(--clr-very-dark-greyish-cyan);
-}
-
-h2.item-position {
+.item-position {
   font-weight: bold;
   font-size: var(--fnt-size-x-large-mobile);
   line-height: 1.5rem;
   margin-top: 9px;
   @include hover-animate;
-}
-
-@include media-desktop {
-  h2.item-position {
+  @include media-desktop {
     font-size: var(--fnt-size-x-large);
     margin-top: 10px;
   }
 }
 
-h2.item-position:hover {
+.item-position:hover {
   color: var(--clr-primary);
 }
 
@@ -142,29 +123,25 @@ $moving-options-gap: clamp(0.5rem, 1.5vw, 1rem);
   font-size: var(--fnt-size-small);
   line-height: 1.5rem;
   color: var(--clr-dark-grayish-cyan);
-}
-
-@include media-desktop {
-  .item-options-container {
+  @include media-desktop {
     font-size: var(--fnt-size-large);
     margin-top: 7px;
   }
-}
-
-// on smaller screens unnecessarily takes up space
-@media (min-width: 350px) {
-  .item-options-container > :not(:last-child) {
-    position: relative;
-    padding-right: calc($moving-options-gap + 0.25rem);
-  }
-  .item-options-container > :not(:last-child)::after {
-    content: '';
-    position: absolute;
-    inset: calc((1.5rem - 0.25rem) / 2) 0 auto auto;
-    border-radius: 1rem;
-    width: 0.25rem;
-    height: 0.25rem;
-    background-color: var(--clr-light-grayish-cyan);
+  // on smaller screens unnecessarily takes up space
+  @media (min-width: 350px) {
+    > :not(:last-child) {
+      position: relative;
+      padding-right: calc($moving-options-gap + 0.25rem);
+    }
+    > :not(:last-child)::after {
+      content: '';
+      position: absolute;
+      inset: calc((1.5rem - 0.25rem) / 2) 0 auto auto;
+      border-radius: 1rem;
+      width: 0.25rem;
+      height: 0.25rem;
+      background-color: var(--clr-light-grayish-cyan);
+    }
   }
 }
 
@@ -172,10 +149,7 @@ $moving-options-gap: clamp(0.5rem, 1.5vw, 1rem);
   width: 100%;
   height: 1px;
   background-color: var(--clr-light-grayish-cyan);
-}
-
-@include media-desktop {
-  .item-horizontal-line {
+  @include media-desktop {
     display: none;
   }
 }
@@ -185,36 +159,32 @@ $moving-options-gap: clamp(0.5rem, 1.5vw, 1rem);
   flex-wrap: wrap;
   column-gap: c.$gap-size-default;
   row-gap: c.$gap-size-default;
-}
-
-@include media-desktop {
-  .item-properties {
+  @include media-desktop {
     justify-content: flex-end;
     align-items: center;
   }
-}
+  * {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: 1 solid black;
+  }
 
-.item-properties * {
-  background-color: rgba(0, 0, 0, 0.1);
-  outline: 1 solid black;
-}
+  button {
+    @include t.fnt-primary;
+    padding: 2px 0.6rem 0 0.6rem;
+    height: 2rem;
+    line-height: 2;
+    border: none;
+    cursor: pointer;
+    background-color: var(--clr-property-background);
+    @include hover-animate;
+  }
 
-.item-properties > button {
-  @include t.fnt-primary;
-  padding: 2px 0.6rem 0 0.6rem;
-  height: 2rem;
-  line-height: 2;
-  border: none;
-  cursor: pointer;
-  background-color: var(--clr-property-background);
-  @include hover-animate;
-}
+  button:is(:hover, :active) {
+    background-color: var(--clr-primary);
+    color: var(--clr-card-background);
+  }
 
-.item-properties button:is(:hover, :active) {
-  background-color: var(--clr-primary);
-  color: var(--clr-card-background);
-}
-
-.item-properties > button:active {
-  @include click-animation;
+  button:active {
+    @include click-animation;
+  }
 }
