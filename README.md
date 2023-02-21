@@ -24,10 +24,8 @@ Users should be able to:
 
 ### Screenshot
 
-Solution screenshot for desktop (1440px screen width)
-![](solution/desktop.png)
-Solution screenshot for mobile (375px screen width)
-![](solution/mobile.png)
+Solution screenshot
+![](solution/preview.png)
 
 ### Links
 
