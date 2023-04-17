@@ -32,41 +32,41 @@ const ItemCard = (props: Props) => {
     <div
       id={id.toString()}
       key={id.toString()}
-      data-testid={`item-card-${id.toString()}`}
-      className={`item-card ${featuredClass} border-radius-medium`}
+      data-testid={`card-item-${id.toString()}`}
+      className={`card-item ${featuredClass} border-radius-medium`}
     >
-      <div className="item-left-side-container">
+      <div className="card-item__left-side">
         <img
           src={logo}
           alt={`company logo of ${company}`}
-          className="item-logo"
+          className="card-item__logo"
         />
-        <div className="item-description-container">
-          <div className="item-header">
-            <h3 className="item-company">{company}</h3>
-            <div data-testid="item-header-tiles" className="item-header-tiles ">
+        <div className="card-item__description">
+          <div className="card-item__header">
+            <h3 className="card-item__company">{company}</h3>
+            <div data-testid="card-item__tiles" className="card-item__tiles ">
               {newJob ? (
-                <div className="item-new border-radius-large">new!</div>
+                <div className="card-item__new border-radius-large">new!</div>
               ) : null}
               {featured ? (
-                <div className="item-featured border-radius-large">
+                <div className="card-item__featured border-radius-large">
                   featured
                 </div>
               ) : null}
             </div>
           </div>
-          <h2 className="item-position">
+          <h2 className="card-item__position">
             <a href={`#${id.toString()}`}>{position}</a>
           </h2>
-          <div className="item-options-container">
-            <div className="item-posted-at">{postedAt}</div>
-            <div className="item-contract">{contract}</div>
-            <div className="item-location">{location}</div>
+          <div className="card-item__options">
+            <div className="card-item__posted-at">{postedAt}</div>
+            <div className="card-item__contract">{contract}</div>
+            <div className="card-item__location">{location}</div>
           </div>
         </div>
       </div>
-      <div className="item-horizontal-line" />
-      <div className="item-properties">
+      <div className="card-item__horizontal-line" />
+      <div className="card-item__properties">
         {properties.map((p, index) =>
           p.length > 0 ? (
             <button

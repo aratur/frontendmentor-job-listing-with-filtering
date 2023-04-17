@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import ItemCard from './ItemCard';
 import Job from '../model/Job';
 
@@ -39,15 +39,21 @@ const handlePropertyClicked = jest.fn((id: number, propertyName: string) => {
   // do nothing});
 });
 
-const renderTemplate = (JobItem: Job) =>
-  render(
-    <ItemCard jobItem={JobItem} handlePropertyClicked={handlePropertyClicked} />
-  );
-
 describe('ItemsList component', () => {
+  const renderTemplate = (JobItem: Job) =>
+    render(
+      <ItemCard
+        jobItem={JobItem}
+        handlePropertyClicked={handlePropertyClicked}
+      />
+    );
+
+  afterEach(() => {
+    cleanup();
+  });
   it('renders one card', () => {
     renderTemplate(mockJobItem);
-    const allJobs = screen.getAllByTestId(/item-card-2/i);
+    const allJobs = screen.getAllByTestId(/card-item-2/i);
     expect(allJobs.length).toBe(1);
   });
 
@@ -71,7 +77,7 @@ describe('ItemsList component', () => {
 
   it("doesn't have new and featured if set to false", () => {
     renderTemplate(mockJobItemFalse);
-    const headerTitles = screen.getByTestId('item-header-tiles');
+    const headerTitles = screen.getByTestId('card-item__tiles');
     expect(headerTitles).toHaveTextContent('');
   });
 });

@@ -54,7 +54,7 @@ const Filter = (props: Props) => {
     <div
       className={`filter border-radius-medium ${hiddenClassName} ${filterBlurOut}`}
     >
-      <div className="filter-properties-container">
+      <div className="filter__properties">
         {filterProperties.map((filterProperty) => (
           <FilterProperty
             key={filterProperty}
@@ -66,7 +66,7 @@ const Filter = (props: Props) => {
       <button
         type="button"
         onClick={handleClearFilterInternal}
-        className="filter-button-clear"
+        className="filter__button-clear"
       >
         Clear
       </button>

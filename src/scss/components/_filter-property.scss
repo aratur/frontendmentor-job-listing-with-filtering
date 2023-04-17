@@ -2,13 +2,13 @@
 @use '../utils/mixins' as a;
 @use '../utils/utility-classes' as u;
 
-.filter-property-container {
+.filter-property {
   display: flex;
   align-items: center;
   background-color: var(--clr-property-background);
 }
 
-.filter-property-button-remove {
+.filter-property__button-remove {
   width: 2rem;
   aspect-ratio: 1/1;
   border: none;
@@ -23,16 +23,16 @@
   @include a.hover-animate;
 }
 
-.filter-property-button-remove:is(:hover, :focus, :active) {
+.filter-property__button-remove:is(:hover, :focus, :active) {
   background-color: var(--clr-very-dark-greyish-cyan);
   cursor: pointer;
 }
 
-.filter-property-button-remove:active {
+.filter-property__button-remove:active {
   @include a.click-animation;
 }
 
-.filter-property-label {
+.filter-property__label {
   margin-top: 2px;
   @include t.fnt-primary;
 }
